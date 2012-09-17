@@ -1,0 +1,7 @@
+platform :ios
+
+pod 'AFNetworking', '1.0RC1'
+
+target :testServiceTests, :exclusive => true do
+    pod 'AFNetworking'
+end
