@@ -1,0 +1,8 @@
+PODS:
+  - AFNetworking (1.0RC1)
+  - GHUnitIOS (0.4.33)
+
+DEPENDENCIES:
+  - AFNetworking (= 1.0RC1)
+  - AFNetworking (= 1.0RC1)
+  - GHUnitIOS

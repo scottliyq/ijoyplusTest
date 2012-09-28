@@ -1,0 +1,7 @@
+platform :ios
+
+pod 'AFNetworking', '1.0RC1'
+
+target :joyplusTestTests, :exclusive => true do
+    pod 'AFNetworking', '1.0RC1'
+end
