@@ -28,3 +28,20 @@ extern NSString *const kPathUserThirdPartyUsers;
 
 extern NSString *const kPathFriendFollow;
 
+extern NSString *const kPathFriendDestory;
+
+extern NSString *const kPathUserFriends;
+
+extern NSString *const kPathUserFans;
+
+extern NSString *const kPathFriendRecommends;
+
+extern NSString *const kPathUserFriendDynamics;
+
+extern NSString *const kPathUserMsgs;
+
+extern NSString *const kPathUserUpdatePicUrl;
+
+extern NSString *const kPathUserUpdateBGPUrl;
+
+extern NSString *const kPathUserPreGenThirdPartyUsers;

@@ -30,5 +30,20 @@ NSString *const kPathUserThirdPartyUsers = @"/joyplus-service/index.php/user/thi
 
 NSString *const kPathFriendFollow = @"/joyplus-service/index.php/friend/follow";
 
+NSString *const kPathFriendDestory = @"/joyplus-service/index.php/friend/destory";
 
+NSString *const kPathUserFriends = @"/joyplus-service/index.php/user/friends";
 
+NSString *const kPathUserFans = @"/joyplus-service/index.php/user/fans";
+
+NSString *const kPathFriendRecommends = @"/joyplus-service/index.php/friend/recommends";
+
+NSString *const kPathUserFriendDynamics = @"/joyplus-service/index.php/user/friendDynamics";
+
+NSString *const kPathUserMsgs = @"/joyplus-service/index.php/user/msgs";
+
+NSString *const kPathUserUpdatePicUrl = @"/joyplus-service/index.php/user/updatePicUrl";
+
+NSString *const kPathUserUpdateBGPUrl = @"/joyplus-service/index.php/user/updateBGPicUrl";
+
+NSString *const kPathUserPreGenThirdPartyUsers = @"/joyplus-service/index.php/user/preGenThirdPartyUsers";

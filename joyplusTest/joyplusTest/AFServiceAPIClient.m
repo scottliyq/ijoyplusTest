@@ -23,7 +23,7 @@
 #import "AFServiceAPIClient.h"
 #import "AFJSONRequestOperation.h"
 
-NSString * const kASinaBaseURLString = @"http://115.239.196.123/joyplus-service/";
+NSString * const kASinaBaseURLString = @"http://115.239.196.123/";
 
 @implementation AFServiceAPIClient
 
