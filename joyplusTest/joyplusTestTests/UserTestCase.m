@@ -35,7 +35,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 nil];
     
     [[AFServiceAPIClient sharedClient] getPath:kPathUserView parameters:parameters success:^(AFHTTPRequestOperation *operation, id result) {
@@ -64,7 +64,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 @"12", @"userid",
                                 nil];
     
@@ -94,7 +94,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 @"1", @"source_type",
                                 nil];
     
@@ -124,7 +124,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 @"1", @"friend_ids",
                                 nil];
     
@@ -154,7 +154,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 @"1", @"friend_ids",
                                 nil];
     
@@ -184,7 +184,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 nil];
     
     [[AFServiceAPIClient sharedClient] getPath:kPathUserFriends parameters:parameters success:^(AFHTTPRequestOperation *operation, id result) {
@@ -213,7 +213,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 @"12", @"userid",
                                 nil];
     
@@ -244,7 +244,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 nil];
     
     [[AFServiceAPIClient sharedClient] getPath:kPathUserFans parameters:parameters success:^(AFHTTPRequestOperation *operation, id result) {
@@ -273,7 +273,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 @"12", @"userid",
                                 nil];
     
@@ -303,7 +303,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 nil];
     
     [[AFServiceAPIClient sharedClient] getPath:kPathFriendRecommends parameters:parameters success:^(AFHTTPRequestOperation *operation, id result) {
@@ -332,7 +332,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 nil];
     
     [[AFServiceAPIClient sharedClient] getPath:kPathUserFriendDynamics parameters:parameters success:^(AFHTTPRequestOperation *operation, id result) {
@@ -361,7 +361,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 nil];
     
     [[AFServiceAPIClient sharedClient] getPath:kPathUserMsgs parameters:parameters success:^(AFHTTPRequestOperation *operation, id result) {
@@ -390,7 +390,7 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 @"www.github.com/testurl", @"url",
                                 nil];
     
@@ -418,11 +418,40 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"ijoyplus_ios_001", @"app_key",
+                                kAppKey, @"app_key",
                                 @"www.github.com/testurl", @"url",
                                 nil];
     
     [[AFServiceAPIClient sharedClient] postPath:kPathUserUpdateBGPUrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id result) {
+        
+        dispatch_semaphore_signal(semaphore);
+        NSString *responseCode = [result objectForKey:@"res_code"];
+        //STAssertNil(responseCode, @"Response failed: %@.", responseCode);
+        STAssertEqualObjects(@"00000", responseCode, @"Response failed: %@.", responseCode);
+        
+    } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error) {
+        dispatch_semaphore_signal(semaphore);
+        
+        STFail(@"<<<<<<%@>>>>>", error);
+    }];
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    dispatch_release(semaphore);
+}
+
+- (void)testUserPreGenThirdPartyUsers
+{
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                kAppKey, @"app_key",
+                                @"001", @"source_id",
+                                @"1", @"source_type",
+                                nil];
+    
+    [[AFServiceAPIClient sharedClient] postPath:kPathUserPreGenThirdPartyUsers parameters:parameters success:^(AFHTTPRequestOperation *operation, id result) {
         
         dispatch_semaphore_signal(semaphore);
         NSString *responseCode = [result objectForKey:@"res_code"];

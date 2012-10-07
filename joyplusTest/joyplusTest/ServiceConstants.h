@@ -45,3 +45,38 @@ extern NSString *const kPathUserUpdatePicUrl;
 extern NSString *const kPathUserUpdateBGPUrl;
 
 extern NSString *const kPathUserPreGenThirdPartyUsers;
+
+extern NSString *const kPathUserWatchs;
+
+extern NSString *const kPathUserFavorities;
+
+//Comments
+extern NSString *const kPathCommentReply;
+
+extern NSString *const kPathCommentReplies;
+
+extern NSString *const kPathCommentView;
+
+//Program
+
+extern NSString *const kPathProgramFavority;
+
+extern NSString *const kPathProgramUnfavority;
+extern NSString *const kPathProgramComment;
+
+extern NSString *const kPathProgramComments;
+
+extern NSString *const kPathProgramWatch;
+
+extern NSString *const kPathProgramRecommend;
+
+extern NSString *const kPathProgramHiddenRecommend;
+
+extern NSString *const kPathProgramHiddenWatch;
+
+extern NSString *const kPathProgramView;
+
+extern NSString *const kPathProgramViewRecommend;
+
+//Search
+extern NSString *const kPathSearchTopKeywords;

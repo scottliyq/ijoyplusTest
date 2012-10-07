@@ -47,3 +47,41 @@ NSString *const kPathUserUpdatePicUrl = @"/joyplus-service/index.php/user/update
 NSString *const kPathUserUpdateBGPUrl = @"/joyplus-service/index.php/user/updateBGPicUrl";
 
 NSString *const kPathUserPreGenThirdPartyUsers = @"/joyplus-service/index.php/user/preGenThirdPartyUsers";
+
+NSString *const kPathUserWatchs = @"/joyplus-service/index.php/user/watchs";
+
+NSString *const kPathUserFavorities = @"/joyplus-service/index.php/user/favorities";
+
+//Comments
+NSString *const kPathCommentReply = @"/joyplus-service/index.php/comment/reply";
+
+NSString *const kPathCommentReplies = @"/joyplus-service/index.php/comment/replies";
+
+NSString *const kPathCommentView= @"/joyplus-service/index.php/comment/view";
+
+//Program
+
+NSString *const kPathProgramFavority = @"/joyplus-service/index.php/program/favority";
+
+NSString *const kPathProgramUnfavority = @"/joyplus-service/index.php/program/unfavority";
+
+NSString *const kPathProgramComment = @"/joyplus-service/index.php/program/comment";
+
+NSString *const kPathProgramComments = @"/joyplus-service/index.php/program/comments";
+
+NSString *const kPathProgramWatch = @"/joyplus-service/index.php/program/watch";
+
+NSString *const kPathProgramRecommend = @"/joyplus-service/index.php/program/recommend";
+
+NSString *const kPathProgramHiddenRecommend = @"/joyplus-service/index.php/program/hiddenRecommend";
+
+NSString *const kPathProgramHiddenWatch = @"/joyplus-service/index.php/program/hiddenWatch";
+
+NSString *const kPathProgramView = @"/joyplus-service/index.php/program/view";
+
+NSString *const kPathProgramViewRecommend = @"/joyplus-service/index.php/program/viewRecommend";
+
+//Search
+NSString *const kPathSearchTopKeywords = @"/joyplus-service/index.php/search/topKeywords";
+
+
